@@ -2,20 +2,19 @@ import screematch.modelos.Filme;
 
 public class Principal {
     public static void main(String[] args) {
+        Filme favorito = new Filme();
 
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
-        meuFilme.setDuracaoEmMinutos(180);
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avalia(8);
-        meuFilme.avalia(5);
-        meuFilme.avalia(10);
-        System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
-        System.out.println(meuFilme.pegaMedia());
-        // meuFilme.somaDasAvaliacoes = 10;
-        // meuFilme.totalDeAvaliacoes = 1;
-        // System.out.println(meuFilme.pegaMedia());
+        favorito.setNome("The Matrix");
+        favorito.setAnoDeLancamento(1999);
+        favorito.setDuracaoEmMinutos(135);
+        favorito.setIncluidoNoPlano(true);
 
+        favorito.exibeFichaTecnica();
+        favorito.avalia(9);
+        favorito.avalia(8);
+        favorito.avalia(9);
+
+        System.out.println("Média de avaliações do filme: " +favorito.pegaMedia());
     }
+
 }
