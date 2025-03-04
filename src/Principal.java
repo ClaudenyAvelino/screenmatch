@@ -1,6 +1,8 @@
+import screematch.modelos.Episodio;
 import screematch.modelos.calculos.CalculadoraDeTempo;
 import screematch.modelos.Filme;
 import screematch.modelos.Serie;
+import screematch.modelos.calculos.FiltroRecomendacao;
 
 public class Principal {
     public static void main(String[] args) {
@@ -56,6 +58,15 @@ public class Principal {
         calculadora.inclui(outroFilme);
         calculadora.inclui(lost);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
     }
 
 }
