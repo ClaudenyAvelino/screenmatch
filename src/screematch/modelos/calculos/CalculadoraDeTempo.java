@@ -1,4 +1,6 @@
-package screematch.modelos;
+package screematch.modelos.calculos;
+
+import screematch.modelos.Titulo;
 
 public class CalculadoraDeTempo {
 

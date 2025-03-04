@@ -1,4 +1,4 @@
-import screematch.modelos.CalculadoraDeTempo;
+import screematch.modelos.calculos.CalculadoraDeTempo;
 import screematch.modelos.Filme;
 import screematch.modelos.Serie;
 
