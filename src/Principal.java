@@ -22,7 +22,10 @@ public class Principal {
         lost.setAnoDeLancamento(2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
+        lost.setMinutosPorEpisodio(50);
         lost.setEpisodiosPorTemporada(10);
+
+        System.out.println("Duração maratonar "+ lost.getNome()+" : " + lost.getDuracaoEmMinutos());
 
     }
 
