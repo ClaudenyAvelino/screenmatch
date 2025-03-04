@@ -50,7 +50,11 @@ public class Pessoa {
 
         System.out.println("Tamanho da lista: "+listaDePessoas.size());
         System.out.println("Primeira pessoa: "+listaDePessoas.get(0).getNome());
-        System.out.println("Lista "+listaDePessoas.toString() );
+      //  System.out.println("Lista "+listaDePessoas.toString() );
+
+        for (Pessoa pessoa : listaDePessoas){
+            System.out.println(pessoa);
+        }
 
     }
 }
