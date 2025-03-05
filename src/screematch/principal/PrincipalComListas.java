@@ -5,6 +5,7 @@ import screematch.modelos.Serie;
 import screematch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -28,5 +29,17 @@ public class PrincipalComListas {
                 if (item instanceof Filme filme)
             System.out.println("Classificação " + filme.getClassificacao());
         }
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Paulo");
+        buscaPorArtista.add("Jacqueline");
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Depois da ordenação");
+        System.out.println(buscaPorArtista);
+        System.out.println("Lista de titulos ordenados");
+        Collections.sort(lista);
+        System.out.println(lista);
     }
 }
