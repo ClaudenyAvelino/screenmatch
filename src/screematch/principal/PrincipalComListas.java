@@ -4,9 +4,7 @@ import screematch.modelos.Filme;
 import screematch.modelos.Serie;
 import screematch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -18,17 +16,17 @@ public class PrincipalComListas {
         filmeDoPaulo.avalia(10);
         Serie lost = new Serie("Lost", 2000);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
         lista.add(filmeDoPaulo);
         lista.add(meuFilme);
         lista.add(outroFilme);
         lista.add(lost);
 
-        for (Titulo item: lista){
+        for (Titulo item: lista) {
             System.out.println(item.getNome());
-            if (item instanceof Filme)
-                if (item instanceof Filme filme)
-            System.out.println("Classificação " + filme.getClassificacao());
+            if (item instanceof  Filme filme && filme.getClassificacao() > 2) {
+                System.out.println("Classificação " + filme.getClassificacao());
+            }
         }
         ArrayList<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Adam Sandler");
