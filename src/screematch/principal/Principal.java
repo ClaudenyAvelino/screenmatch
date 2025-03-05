@@ -1,3 +1,5 @@
+package screematch.principal;
+
 import screematch.modelos.Episodio;
 import screematch.modelos.calculos.CalculadoraDeTempo;
 import screematch.modelos.Filme;
