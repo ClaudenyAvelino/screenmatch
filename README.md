@@ -1,54 +1,51 @@
 # Aula Prática: Criando a Classe `Filme` em Java com Orientação a Objetos
 
 ## Objetivo
-Aplicar a orientação a objetos para organizar e melhorar o código, utilizando a criação de uma classe `Filme` como exemplo. O objetivo é centralizar informações e regras de negócios de maneira eficiente, melhorando a manutenção e legibilidade do código.
+
+Nesta aula, vamos aprender a **aplicar a orientação a objetos** para organizar e melhorar o código de uma aplicação. Usaremos a criação de uma classe `Filme` como exemplo para mostrar como centralizar informações e regras de negócios de maneira eficiente, facilitando a manutenção e a legibilidade do código.
 
 ---
 
-## Conteúdo Programático
+### **1. Introdução à Orientação a Objetos**
 
-### 1. Introdução à Orientação a Objetos
-- Conceitos de classes e objetos.
-- Diferença entre orientação a objetos e programação procedural.
-- Benefícios da orientação a objetos no desenvolvimento de software.
+A orientação a objetos é um paradigma de programação que permite organizar o código em **classes** e **objetos**, onde cada classe define as características e comportamentos de uma entidade, e os objetos são instâncias dessas classes.
 
-### 2. Desafios com Código Desorganizado
-- Explicação do problema de código desorganizado, com regras de negócios espalhadas por todo o código.
-- Como a manutenção e evolução do código ficam mais difíceis sem a aplicação de boas práticas de organização.
+### **2. Problema com Código Desorganizado**
 
-### 3. Benefícios da Orientação a Objetos
-- **Encapsulamento**: Centralização de dados e regras dentro de classes.
-- **Abstração**: Simplificação de comportamentos comuns.
-- **Reusabilidade**: Criação de classes reutilizáveis em diferentes partes do código.
+Antes de usar orientação a objetos, quando espalhamos regras de negócios pelo código, como verificações e condições, o código se torna difícil de manter. Se precisar alterar uma regra, é necessário procurar em várias partes do código, o que pode gerar bugs.
+
+### **3. Benefícios da Orientação a Objetos**
+
+- **Encapsulamento**: As regras e dados são centralizados dentro de classes, evitando dispersão de lógica.
+- **Abstração**: Podemos abstrair comportamentos e atributos comuns, tornando o código mais legível.
+- **Reusabilidade**: Classes podem ser reutilizadas em diferentes partes do código.
 
 ---
 
-## Histórico de Commits
+### **4. Criando a Classe `Filme`**
 
-### 1. [Adiciona classe Filme com atributos básicos](https://github.com/ClaudenyAvelino/screenmatch/commit/commit_id)
-- Criação inicial da classe `Filme`.
-- Atributos: `nome`, `anoDeLancamento`, `incluidoNoPlano`, `avaliacao`, `totalDeAvaliacoes`.
-- Definição do método `estaIncluidoNoPlano()` para verificar se o filme está incluído no plano de assinatura.
+Vamos criar uma classe chamada `Filme` para representar as informações de um filme. A classe irá conter atributos e métodos para manipular essas informações.
 
-### 2. [Adiciona método para calcular média de avaliações](https://github.com/ClaudenyAvelino/screenmatch/commit/commit_id)
-- Implementação do método `calcularMediaAvaliacoes()`.
-- Cálculo da média de avaliações baseadas nas avaliações e total de avaliações feitas no filme.
+#### Atributos:
+- `nome`: O nome do filme.
+- `anoDeLancamento`: O ano em que o filme foi lançado.
+- `incluidoNoPlano`: Indica se o filme está incluído no plano do usuário.
+- `avaliacao`: A avaliação do filme, de 0 a 10.
+- `totalDeAvaliacoes`: O número total de avaliações do filme.
 
-### 3. [Refatora código de inclusão no plano](https://github.com/ClaudenyAvelino/screenmatch/commit/commit_id)
-- Refatoração do método `estaIncluidoNoPlano()`, tornando-o mais eficiente e claro.
-- Adição de novos atributos e validações para garantir maior controle sobre o estado do filme no plano.
+#### Método:
+- `estaIncluidoNoPlano()`: Método para verificar se o filme está incluído no plano do usuário.
 
-### 4. [Adiciona testes unitários para a classe Filme](https://github.com/ClaudenyAvelino/screenmatch/commit/commit_id)
-- Implementação de testes unitários para verificar se os métodos `estaIncluidoNoPlano()` e `calcularMediaAvaliacoes()` funcionam corretamente.
-- Utilização do JUnit para garantir a qualidade e o funcionamento adequado do código.
+```java
+public class Filme {
+    String nome;
+    int anoDeLancamento;
+    boolean incluidoNoPlano;
+    double avaliacao;
+    int totalDeAvaliacoes;
 
-### 5. [Melhora a documentação e formatação do código](https://github.com/ClaudenyAvelino/screenmatch/commit/commit_id)
-- Melhorias na documentação dos métodos e atributos da classe `Filme`.
-- Adoção de convenções de nomenclatura para garantir maior legibilidade do código.
-
----
-
-## Exercícios Práticos
-- Criar novos filmes e verificar se estão incluídos no plano.
-- Implementar métodos adicionais, como alterar o status de inclusão no plano ou adicionar novas avaliações.
-- Escrever testes unitários para validar os métodos criados.
+    // Método para verificar se o filme está incluído no plano
+    public boolean estaIncluidoNoPlano() {
+        return incluidoNoPlano;
+    }
+}

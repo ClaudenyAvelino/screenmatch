@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class PrincipalComBusca {
     public static void main (String[] args) throws IOException, InterruptedException {
         Scanner entardada = new Scanner(System.in);
-        String KEY = "dfae3a7c";
+        String KEY = "";
         String filme = "";
         System.out.println("Informe o filme ou serie :");
         filme = entardada.nextLine();
