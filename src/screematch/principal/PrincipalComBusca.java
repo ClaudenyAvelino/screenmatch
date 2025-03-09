@@ -1,5 +1,8 @@
 package screematch.principal;
 
+import com.google.gson.Gson;
+import screematch.modelos.Titulo;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -11,15 +14,26 @@ public class PrincipalComBusca {
     public static void main (String[] args) throws IOException, InterruptedException {
         Scanner entardada = new Scanner(System.in);
         String KEY = "";
-        String filme = "";
+
         System.out.println("Informe o filme ou serie :");
-        filme = entardada.nextLine();
+        var busca = entardada.nextLine();
+
+        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey="+KEY;
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://www.omdbapi.com/?t="+filme+"&apikey="+KEY))
+                .uri(URI.create(endereco))
                 .build();
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+        System.out.println();
+
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new Gson();
+        Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+        System.out.println(meuTitulo);
+
     }
 }
