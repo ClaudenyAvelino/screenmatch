@@ -3,6 +3,7 @@ package screematch.principal;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import screematch.excecao.ErroDeConversaoDeAnoException;
 import screematch.modelos.Titulo;
 import screematch.modelos.TituloOmdb;
 
@@ -21,7 +22,7 @@ public class PrincipalComBusca {
         System.out.println("Informe o filme ou serie :");
         var busca = entardada.nextLine();
 
-        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey="+KEY;
+        String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ","+") + "&apikey="+KEY;
 
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -45,8 +46,8 @@ public class PrincipalComBusca {
         } catch (NumberFormatException e) {
             System.out.println("Aconteceu um erro: ");
             System.out.println(e.getMessage());
-        }catch (IllegalArgumentException e){
-            System.out.println("Algum erro de argumento na busca, verifique o endereço");
+        }catch (ErroDeConversaoDeAnoException e){
+            System.out.println(e.getMessage());
         }
 
         System.out.println("O programa finalizou corretamente!");
